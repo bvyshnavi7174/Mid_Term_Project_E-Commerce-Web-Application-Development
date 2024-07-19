@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(208,174,210);
+    color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+  
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right div {
+    margin-left: 20px;
+    position: relative;
+}
+
+#user-photo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#logout {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #f4f4f4;
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+#logout li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.body-container {
+    display: flex;
+    padding-top: 70px; /* Adjust for fixed header height */
+}
+
+
+.sidebar {
+    width: 200px;
+    background-color: rgb(208,174,210);
+    margin-top: 30px;
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  
+}
+
+.sidebar:hover {
+    background-color: rgb(190,150,190);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: rgb(150,120,150);
+    color: white;
+}
+
+.sidebar-toggle {
+    display: none;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sidebar-toggle:hover {
+    background-color: #555;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px; 
+    background-color: rgb(255, 255, 255);
+}
+
+
+.scrolling-items {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    min-width: 45%;
+    height: 300px;
+    margin-right: 10px;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.category-mens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.category-womens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.category-kids {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.category-cosmetics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.category-footwear {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.static-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 185px;
+    text-align: center;
+}
+
+.item-image {
+    width: 90%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.item-description {
+    margin: 8px 0;
+}
+
+.item-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-button,.delete-button {
+    background-color: rgb(208,174,210);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+.delete-button:hover {
+    
+    background-color: #e35757;
+}
+
+.edit-button:hover{
+    background-color: rgb(100, 216, 100);
+}
+.add-button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    .sidebar-toggle {
+        display: block;
+    }
+    main {
+        margin-left: 0;
+    }
+}

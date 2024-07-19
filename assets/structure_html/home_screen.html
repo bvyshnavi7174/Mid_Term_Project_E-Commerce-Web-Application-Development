@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../stylesheets_css/home_screen.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="../images/main_screen_images/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="header-center">
+            <h1>Blissful Bloom</h1>
+        </div>
+        <div class="header-right">
+            <div id="account-details">
+                <img src="user-photo.jpg" alt="User Photo" id="user-photo">
+            </div>
+        </div>
+    </header>
+    <div class="body-container">
+        <nav class="sidebar" id="sidebar">
+           
+            <ul>
+                <button class="add-button" onclick="addStaticItem()">Add</button>
+                <li onclick="handleClick('item1')">Women's Wear</li>
+                <li onclick="handleClick('item2')">Men's Wear</li>
+                <li onclick="handleClick('item3')">Kid's Wear</li>
+                <li onclick="handleClick('item2')">Cosmetics</li>
+                <li onclick="handleClick('item3')">Footwear</li>
+            </ul>
+            <ul id="logout" class="logout-menu">
+                <li onclick="logout()">Logout</li>
+            </ul>
+        </nav>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</button>
+
+
+
+
+        <main>
+            <div class="scrolling-items">
+                <div class="item">
+                    <img src="../images/main_screen_images/women_style.jpg" alt="Item 1" class="item-image">
+                </div>
+                <div class="item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Item 2" class="item-image">
+                </div>
+                <div class="item">
+                    <img src="../images/main_screen_images/serum_1.jpg" alt="Item 3" class="item-image">
+                </div>
+                <div class="item">
+                    <img src="../images/main_screen_images/serum_2.jpg" alt="Item 4" class="item-image">
+                </div>
+                <div class="item">
+                    <img src="../images/main_screen_images/perfume.jpg" alt="Item 5" class="item-image">
+                </div>
+            </div>
+            <div><button class="add-button" onclick="addStaticItem()">Add</button></div>
+           
+           
+           
+           
+           <hr>
+           <div><h1 style="font-size: larger;">    MEN'S WEAR</h1></div>
+         
+            <div class="category-mens">
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 1" class="item-image">
+                    <p class="item-description">Description for Item 1</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 2" class="item-image">
+                    <p class="item-description">Description for Item 2</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 3" class="item-image">
+                    <p class="item-description">Description for Item 3</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 4" class="item-image">
+                    <p class="item-description">Description for Item 4</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div><hr>
+
+
+
+
+
+
+<hr>
+            <div><h1 style="font-size: larger;">    WOMEN'S WEAR</h1></div>
+           
+          <div class="category-womens">
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 1" class="item-image">
+                    <p class="item-description">Description for Item 1</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 1" class="item-image">
+                    <p class="item-description">Description for Item 1</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 2" class="item-image">
+                    <p class="item-description">Description for Item 2</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 3" class="item-image">
+                    <p class="item-description">Description for Item 3</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 4" class="item-image">
+                    <p class="item-description">Description for Item 4</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div><hr>
+            
+          
+
+
+
+
+            <hr>
+            <div><h1 style="font-size: larger;">    KID'S WEAR</h1></div>
+          
+            <div class="category-kids">
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 1" class="item-image">
+                    <p class="item-description">Description for Item 1</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 2" class="item-image">
+                    <p class="item-description">Description for Item 2</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 3" class="item-image">
+                    <p class="item-description">Description for Item 3</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 4" class="item-image">
+                    <p class="item-description">Description for Item 4</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div><hr>
+
+
+
+
+
+
+
+
+
+
+
+
+            <hr>
+
+            <div><h1 style="font-size: larger;">    COSMETICS</h1></div>
+ <div class="category-cosmetics">
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 1" class="item-image">
+                    <p class="item-description">Description for Item 1</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 2" class="item-image">
+                    <p class="item-description">Description for Item 2</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 3" class="item-image">
+                    <p class="item-description">Description for Item 3</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 4" class="item-image">
+                    <p class="item-description">Description for Item 4</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <hr><hr>
+            <div><h1 style="font-size: larger;">FOOTWEAR</h1></div>
+           <div class="category-footwear">
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 1" class="item-image">
+                    <p class="item-description">Description for Item 1</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 2" class="item-image">
+                    <p class="item-description">Description for Item 2</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 3" class="item-image">
+                    <p class="item-description">Description for Item 3</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+                <div class="static-item">
+                    <img src="../images/main_screen_images/men_style.jpg" alt="Description of image 4" class="item-image">
+                    <p class="item-description">Description for Item 4</p>
+                    <div class="item-options">
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div>
+          
+            <hr>
+        </main>
+    </div>
+    <script src="../functionality_js/home_screen.js"></script>
+</body>
+</html>
