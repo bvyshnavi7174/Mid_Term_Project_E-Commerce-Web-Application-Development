@@ -29,10 +29,34 @@ function toggleSidebar() {
     sidebar.style.transform = isHidden ? 'translateX(-100%)' : 'translateX(0px)';
 }
 
-function addStaticItem() {
-    const staticContainer = document.querySelector('.static-container');
-    const newItem = document.createElement('div');
-    newItem.className = 'static-item';
-    newItem.textContent = 'New Static Item';
-    staticContainer.appendChild(newItem);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Get popup box element
+    const popupBox = document.getElementById('popupBox');
+
+    // Function to open popup box
+    window.openPopup = function() {
+        popupBox.style.display = 'flex';
+    }
+
+    // Function to close popup box
+    window.closePopup = function() {
+        popupBox.style.display = 'none';
+    }
+
+    // Handle form submission
+    document.getElementById('addItemForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const imgUrl = document.getElementById('imgUrl').value;
+        const description = document.getElementById('description').value;
+        const productName = document.getElementById('productName').value;
+        const price = document.getElementById('price').value;
+        const catogery = document.getElementById('catogery').value;
+
+        // Process the form data here
+
+        // Close the popup box after submission
+        closePopup();
+    });
+});
+
