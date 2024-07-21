@@ -222,101 +222,176 @@ main {
 .edit-button:hover{
     background-color: rgb(100, 216, 100);
 }
-.add-button {
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        position: absolute;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-    .sidebar-toggle {
-        display: block;
-    }
-    main {
-        margin-left: 0;
-    }
-}
 
 
-
-/* Popup Box Styles */
-.popup-box {
-    display: none; /* Hidden by default */
+.modal {
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
-    justify-content: center;
-    align-items: center;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
 }
 
-.popup-content {
+.modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 80%;
     max-width: 500px;
-    position: relative;
 }
 
-.popup-close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.popup-close:hover,
-.popup-close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-form {
+.add-button {
+    background-color: lavender;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.add-button:hover {
+    background-color: lightgray;
+}
+
+.modal form {
     display: flex;
     flex-direction: column;
 }
 
-form label {
-    margin-top: 10px;
-}
-
-form input {
+.modal form label,
+.modal form input {
     margin-bottom: 10px;
+}
+
+
+/* Overlay to cover the entire screen */
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Container for the form */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Form heading */
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Form elements */
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-container input,
+.form-container select {
+    width: calc(100% - 22px);
     padding: 10px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+/* .form-container input[type="number"] {
+    -moz-appearance: textfield; /* Hide spinner for number inputs in Firefox */
+*/
+
+.form-container input[type="number"]::-webkit-inner-spin-button,
+.form-container input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Button container */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* General button styles */
+.form-buttons button {
+    padding: 12px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-form button:hover {
-    background-color: #45a049;
+/* Cancel button styles */
+.btn-cancel {
+    background-color: #f44336;
+    color: #fff;
 }
 
-.add-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
+.btn-cancel:hover {
+    background-color: #d32f2f;
 }
 
-.add-button:hover {
-    background-color: #0056b3;
+/* Submit button styles */
+.btn-submit {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background-color: #388e3c;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routers/auth');
 const connectDB = require('./config/db');
 const cors = require('cors'); // Import CORS
 
