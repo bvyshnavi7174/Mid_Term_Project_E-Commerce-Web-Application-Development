@@ -40,7 +40,7 @@ function showAddProductForm() {
     if (form) {
         form.style.display = 'flex';
     }
-}     
+}
 
 function closeAddProductForm() {
     const form = document.getElementById('addProductForm');
@@ -49,6 +49,7 @@ function closeAddProductForm() {
     }
 }
 
+// Handle product form submission
 document.getElementById('productForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -56,12 +57,28 @@ document.getElementById('productForm').addEventListener('submit', function(event
     const price = document.getElementById('price').value;
     const image = document.getElementById('image').value;
     const category = document.getElementById('category').value;
-    
-    // Add code here to handle the form data, such as sending it to a server or updating the UI
-    
-    alert(`Product Added:\nName: ${productName}\nPrice: ${price}\nImage: ${image}\nCategory: ${category}`);
-    
-    closeAddProductForm(); // Close the form after submission
+
+    // Send form data to the server
+    fetch('http://127.0.0.1:5000/products/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: productName,
+            price: price,
+            image: image,
+            category: category
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(`Product Added:\nName: ${data.product.name}\nPrice: ${data.product.price}\nImage: ${data.product.image}\nCategory: ${data.product.category}`);
+        closeAddProductForm(); // Close the form after submission
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
 
 function toggleSidebar() {
@@ -71,5 +88,3 @@ function toggleSidebar() {
         sidebar.style.transform = isHidden ? 'translateX(-100%)' : 'translateX(0px)';
     }
 }
-
-
