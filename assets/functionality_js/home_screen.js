@@ -113,10 +113,7 @@ function loadProducts() {
                 'women': 'womens',
                 'womensWear': 'womens',
                 'mensWear': 'mens',
-<<<<<<< HEAD
                 'kidsWear': 'kids',
-=======
->>>>>>> f65158f7d67c95c19ca0fbe2305c8bacf29afbe7
                 'kids': 'kids',
                 'cosmetics': 'cosmetics',
                 'footwear': 'footwear'
@@ -186,11 +183,7 @@ function handleEdit(event) {
     const item = event.target.closest('.item');
     const id = item.getAttribute('data-id');
     
-<<<<<<< HEAD
     // use a form or modal to gather updated product data
-=======
-    // You might want to use a form or modal to gather updated product data
->>>>>>> f65158f7d67c95c19ca0fbe2305c8bacf29afbe7
     const updatedData = {
         name: prompt('Enter new product name:'),
         price: prompt('Enter new price:'),

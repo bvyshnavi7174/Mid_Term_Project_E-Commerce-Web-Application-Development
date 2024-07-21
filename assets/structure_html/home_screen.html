@@ -1,232 +1,71 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgb(208,174,210);
-    color: rgb(0, 0, 0);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-  
-.header-left {
-    display: flex;
-    align-items: center;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../stylesheets_css/home_screen.css">
+</head>
 
-.logo {
-    height: 50px;
-}
+<body>
+    <input type="text" writingsuggestions="auto" placeholder="Type here..." />
+    <header>
+        <div class="header-left">
+            <img src="../images/main_screen_images/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="header-center">
+            <h1>Blissful Bloom</h1>
 
-.header-center {
-    flex: 1;
-    text-align: center;
-}
+        </div>
 
-.header-right {
-    display: flex;
-    align-items: center;
-}
+    </header>
+    <div class="body-container">
+        <nav class="sidebar" id="sidebar">
 
-.header-right div {
-    margin-left: 20px;
-    position: relative;
-}
+            <ul>
 
-<<<<<<< HEAD
                 <li onclick="handleClick('item6')">Add new product</li>
                 
                 <li onclick="handleClick('item5')">Logout</li>
             </ul>
-=======
-#user-photo {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
->>>>>>> f65158f7d67c95c19ca0fbe2305c8bacf29afbe7
 
-#logout {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #f4f4f4;
-    list-style: none;
-    padding: 0;
-    border: 1px solid #ccc;
-}
-
-#logout li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.body-container {
-    display: flex;
-    padding-top: 70px; /* Adjust for fixed header height */
-}
-
-
-.sidebar {
-    width: 200px;
-    background-color: rgb(208,174,210);
-    margin-top: 30px;
-    padding: 10px;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  
-}
-
-.sidebar:hover {
-    background-color: rgb(190,150,190);
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sidebar li:hover {
-    background-color: rgb(150,120,150);
-    color: white;
-}
-
-.sidebar-toggle {
-    display: none;
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.sidebar-toggle:hover {
-    background-color: #555;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-    margin-left: 220px; 
-    background-color: rgb(255, 255, 255);
-}
-
-
-.scrolling-items {
-    display: flex;
-    overflow-x: auto;
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.item {
-    min-width: 45%;
-    height: 300px;
-    margin-right: 10px;
-    padding: 20px;
-    background-color: #eee;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    cursor: pointer;
-}
-
-.item-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.category-mens {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.category-womens {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-.category-kids {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-.category-cosmetics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-.category-footwear {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.static-item {
-    border: 1px solid #ddd;
-    padding: 16px;
-    border-radius: 8px;
-    max-width: 185px;
-    text-align: center;
-}
-
-.item-image {
-    width: 90%;
-    height: 250px;
-    border-radius: 4px;
-}
-
-.item-description {
-    margin: 8px 0;
-}
-
-.item-options {
-    display: flex;
-    justify-content: space-between;
-}
-
-.edit-button,.delete-button {
-    background-color: rgb(208,174,210);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-}
+            <!-- Add Product Form (initially hidden) -->
+            <div id="addProductForm" class="form-overlay">
+                <div class="form-container">
+                    <form id="productForm">
+                        <h2>Add New Product</h2>
+                        <label for="productName">Product Name:</label>
+                        <input type="text" id="productName" name="productName" required>
+                        <br>
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" required>
+                        <br>
+                        <label for="image">Image URL:</label>
+                        <input type="text" id="image" name="image" required>
+                        <br>
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required>
+                            <option value="womensWear">Women's Wear</option>
+                            <option value="mensWear">Men's Wear</option>
+                            <option value="kidsWear">Kid's Wear</option>
+                            <option value="cosmetics">Cosmetics</option>
+                            <option value="footwear">Footwear</option>
+                        </select>
+                        <br>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-cancel" onclick="closeAddProductForm()">Cancel</button>
+                            <button type="submit" class="btn-submit">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
 
 
-.delete-button:hover {
-    
-    background-color: #e35757;
-}
+        </nav>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</button>
 
-<<<<<<< HEAD
         <main>
             <div class="scrolling-items">
                 <div class="item">
@@ -278,183 +117,5 @@ main {
     </div>
     <script src="../functionality_js/home_screen.js"></script>
 </body>
-=======
-.edit-button:hover{
-    background-color: rgb(100, 216, 100);
-}
 
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.add-button {
-    background-color: lavender;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.add-button:hover {
-    background-color: lightgray;
-}
-
-.modal form {
-    display: flex;
-    flex-direction: column;
-}
-
-.modal form label,
-.modal form input {
-    margin-bottom: 10px;
-}
-
-
-/* Overlay to cover the entire screen */
-.form-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Container for the form */
-.form-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Form heading */
-.form-container h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-/* Form elements */
-.form-container label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.form-container input,
-.form-container select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* .form-container input[type="number"] {
-    -moz-appearance: textfield; /* Hide spinner for number inputs in Firefox */
-*/
-
-.form-container input[type="number"]::-webkit-inner-spin-button,
-.form-container input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Button container */
-.form-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-/* General button styles */
-.form-buttons button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-/* Cancel button styles */
-.btn-cancel {
-    background-color: #f44336;
-    color: #fff;
-}
-
-.btn-cancel:hover {
-    background-color: #d32f2f;
-}
-
-/* Submit button styles */
-.btn-submit {
-    background-color: #4caf50;
-    color: #fff;
-}
-
-.btn-submit:hover {
-    background-color: #388e3c;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .form-container {
-        padding: 20px;
-        width: 90%;
-    }
-
-    .form-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
->>>>>>> f65158f7d67c95c19ca0fbe2305c8bacf29afbe7
-
+</html>
