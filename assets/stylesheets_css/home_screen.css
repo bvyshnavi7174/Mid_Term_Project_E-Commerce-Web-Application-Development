@@ -189,7 +189,7 @@ main {
 
 .item-image {
     width: 90%;
-    height: auto;
+    height: 250px;
     border-radius: 4px;
 }
 
@@ -395,3 +395,5 @@ main {
         gap: 10px;
     }
 }
+
+
